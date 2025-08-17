@@ -23,15 +23,20 @@ AIエンジニアを目指すにあたり、pythonでのスクレイピング経
 
 ## 導入・実行方法  
 ### 1. リポジトリをクローン  
-```bash  
+```bash
 git clone https://github.com/N-Ritsu/AIstudy.git  
-cd AIstudy/book_scraper```  
-### 2. 必要なライブラリをインストール  
-```bash  
-pip install -r requirements.txt```  
+cd AIstudy/book_scraper
+```
+
+### 2. 必要なライブラリをインストール
+```bash
+pip install -r requirements.txt
+```
+
 ### 3. プログラムを実行
-```bash  
-python book_scraper.py```   
+```bash
+python book_scraper.py
+```
 
 ## 開発を通して  
 私はこのBook Scraperの開発が、初めてのスクレイピング経験となりました。
