@@ -1,2 +1,3 @@
 .env
+venv/
 books_data.csv
