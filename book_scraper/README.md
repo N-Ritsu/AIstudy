@@ -17,21 +17,21 @@ AIエンジニアを目指すにあたり、pythonでのスクレイピング経
 ・言語  
   Python  
 ・ライブラリ   
-  requests　　
+  requests  
   BeautifulSoup4  
   csv  
 
 ## 導入・実行方法  
 ### 1. リポジトリをクローン  
-'''bash  
-git clone https://github.com/N-Ritsu/AIstudy.git
-cd AIstudy/book_scraper'''  
+```bash  
+git clone https://github.com/N-Ritsu/AIstudy.git  
+cd AIstudy/book_scraper```  
 ### 2. 必要なライブラリをインストール  
-'''bash  
-pip install -r requirements.txt'''  
+```bash  
+pip install -r requirements.txt```  
 ### 3. プログラムを実行
-'''bash  
-python book_scraper.py'''   
+```bash  
+python book_scraper.py```   
 
 ## 開発を通して  
 私はこのBook Scraperの開発が、初めてのスクレイピング経験となりました。
