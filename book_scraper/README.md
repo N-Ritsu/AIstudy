@@ -27,12 +27,10 @@ AIエンジニアを目指すにあたり、pythonでのスクレイピング経
 git clone https://github.com/N-Ritsu/AIstudy.git  
 cd AIstudy/book_scraper
 ```
-
 ### 2. 必要なライブラリをインストール
 ```bash
 pip install -r requirements.txt
 ```
-
 ### 3. プログラムを実行
 ```bash
 python book_scraper.py
@@ -41,4 +39,5 @@ python book_scraper.py
 ## 開発を通して  
 私はこのBook Scraperの開発が、初めてのスクレイピング経験となりました。
 開発で最も苦労したのは、書籍によってクラス名が異なるケースに対応するプログラムの作成です。より安定した親要素からの相対的な位置（CSSセレクタ）でデータを取得する、堅牢なロジックを実装しました。  
+
 この開発を通して、実践的なスクレイピングに対する理解を深め、同時にHTMLの読解力が向上しました。
