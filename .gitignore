@@ -1,4 +1,4 @@
 .env
-venv/
+*/venv/
 books_data.csv
 game_logs.csv
