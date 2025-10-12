@@ -139,7 +139,14 @@ def make_fig(normal_player: pd.DataFrame, suspicious_players_by_rule: pd.DataFra
   return output_filename
 
 
-def main():
+def main() -> None:
+  """
+  チート検出プログラムのメイン処理
+  Args:
+    None
+  Returns:
+    None
+  """
   # ゲームログを1000人分生成
   game_data = generate_game_logs()
   # データをCSVファイルとして保存
