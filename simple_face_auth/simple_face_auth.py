@@ -52,7 +52,7 @@ def are_faces_same(known_encoding: np.ndarray, unknown_encoding: np.ndarray, tol
   return face_recognition.compare_faces([known_encoding], unknown_encoding, tolerance=tolerance)[0]
 
 
-def main():
+def main() -> None:
   """
   顔認証プログラムのメイン処理
   Args:
