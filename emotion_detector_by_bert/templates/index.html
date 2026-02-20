@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>テキスト感情分析ツール</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; }
+        textarea { width: 100%; height: 100px; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 5px; }
+        .positive { background-color: #e0f2f1; border: 1px solid #009688; }
+        .negative { background-color: #ffebee; border: 1px solid #f44336; }
+    </style>
+</head>
+<body>
+    <h1>テキスト感情分析ツール</h1>
+    <p>分析したい日本語の文章を入力してください。</p>
+    
+    <form method="post">
+        <textarea name="text">{{ text }}</textarea>
+        <br><br>
+        <input type="submit" value="分析する">
+    </form>
+
+    {% if sentiment %}
+        <h2>分析結果</h2>
+        <div class="result 
+            {% if sentiment == 'positive' %}
+                positive
+            {% elif sentiment == 'negative' %}
+                negative
+            {% endif %}
+        ">
+            <p><strong>結果: {{ sentiment }}</strong></p>
+        </div>
+    {% endif %}
+
+</body>
+</html>
