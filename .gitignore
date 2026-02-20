@@ -38,6 +38,9 @@ ml-100k/
 data/
 dataset_images/
 
+# ─── データベースファイル ───
+*.json
+
 # ─── バイナリファイル ───
 *.pkl
 *.pth
