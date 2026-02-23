@@ -60,3 +60,6 @@ PyTorchで構築したLSTM Autoencoderモデルを用いて、時系列データ
 
 ### ・whisper_cli_transcriber
 OpenAIの音声認識モデルWhisperを利用して、音声ファイルから文字起こしを行うコマンドラインツールです。
+
+### ・yolov8_object_detector
+事前学習済みの物体検出モデル"YOLOv8"とOpenCVを利用して、静止画や動画ファイルから物体を検出・追跡するプログラムです。 
