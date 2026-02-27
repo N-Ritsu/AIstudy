@@ -32,6 +32,7 @@ results/
 # ─── テキストファイル ───
 # プロジェクトで扱う個人情報を含む可能性のあるテキストファイル
 knowledge.txt
+article.txt
 
 # ─── ドキュメントフォルダ ───
 documents/
