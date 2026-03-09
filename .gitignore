@@ -55,3 +55,6 @@ dataset_images/
 # VSCodeなどのエディタが自動生成する設定フォルダ
 .vscode/
 .idea/
+
+# ─── MLflowのローカル追跡用ディレクトリ ───
+mlruns/
