@@ -9,6 +9,7 @@
 # ─── Pythonのキャッシュと一時ファイル ───
 # Pythonが自動生成するキャッシュファイルやコンパイル済みファイル
 __pycache__/
+.pytest_cache/
 *.pyc
 *.pyo
 *.pyd
