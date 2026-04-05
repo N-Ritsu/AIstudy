@@ -1,0 +1,5 @@
+pandas
+scikit-learn
+# Airflow環境で実行する場合に必要
+apache-airflow
+joblib
