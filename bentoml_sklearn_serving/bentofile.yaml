@@ -1,0 +1,9 @@
+service: "service:svc"
+description: "A simple Iris classifier for demonstration."
+include:
+  - "*.py"
+python:
+  packages:
+    - scikit-learn
+models:
+  - "iris_clf:latest"
