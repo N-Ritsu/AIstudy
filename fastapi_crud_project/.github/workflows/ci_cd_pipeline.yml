@@ -1,0 +1,53 @@
+name: FastAPI CI/CD Pipeline
+
+# GitHub Actionsのトリガーを設定
+on:
+  # mainブランチへのpushとpull requestをトリガーに設定
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# トリガーされたときに実行されるジョブを定義
+jobs:
+  # テストを行う
+  test:
+    name: Run Tests # ジョブの名前
+    runs-on: ubuntu-latest # 使用するOSを指定
+    steps:
+      - name: Check out repository # ステップの名前
+        uses: actions/checkout@v3 # リポジトリのソースコードを仮想環境上にコピー（チェックアウト）
+      - name: Set up Python
+        uses: actions/setup-python@v4 # Pythonの実行環境をセットアップ
+        with:
+          python-version: '3.10' # バージョンを指定
+      - name: Install dependencies
+        run: | # コマンドラインで実行するコマンドを指定
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run pytest
+        run: |
+          pytest
+
+  # DockerイメージをビルドしてDocker Hubにプッシュする
+  build-and-push:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    needs: test # testジョブが成功した後に実行
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' # mainブランチへのpushのときのみ実行
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: . # Dockerfileのあるディレクトリをルートディレクトリに指定
+          file: ./Dockerfile # Dockerfileのパスを指定
+          push: true # ビルドしたイメージをDocker Hubにプッシュする
+          # タグ名をプロジェクトに合わせて変更
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi_crud_project:latest
