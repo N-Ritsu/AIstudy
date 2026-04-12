@@ -50,7 +50,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./fastapi_crud_project # Dockerfileのあるディレクトリをルートディレクトリに指定
-          file: Dockerfile # Dockerfileのパスを指定
+          file: ./fastapi_crud_project/Dockerfile # Dockerfileのパスを指定
           push: true # ビルドしたイメージをDocker Hubにプッシュする
           # タグ名をプロジェクトに合わせて変更
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi_crud_project:latest
