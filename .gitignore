@@ -21,6 +21,7 @@ __pycache__/
 *.csv
 results/
 artifacts/
+monitoring_artifacts/
 
 # ─── 画像ファイル ───
 # プロジェクトで扱う個人情報を含む可能性のある画像ファイル
