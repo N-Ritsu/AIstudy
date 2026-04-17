@@ -22,6 +22,10 @@ __pycache__/
 results/
 artifacts/
 monitoring_artifacts/
+.terraform.lock.hcl
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
 
 # ─── 画像ファイル ───
 # プロジェクトで扱う個人情報を含む可能性のある画像ファイル
