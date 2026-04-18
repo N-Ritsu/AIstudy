@@ -62,18 +62,32 @@ jobs:
         working-directory: ./aws_infrastructure_construction_from_terraform/terraform
         run: terraform init
 
-      # 既存のリソースを一旦すべて削除（AlreadyExists エラーを防ぐ）
-      - name: Terraform Destroy (Clean up previous infrastructure)
+      # --- 強制クリーンアップフェーズ ---
+      - name: Terraform Refresh (Sync state with real world)
         working-directory: ./aws_infrastructure_construction_from_terraform/terraform
-        continue-on-error: true  # すでに何もない場合もエラーにしない
+        continue-on-error: true
+        run: terraform refresh
+
+      - name: Terraform Destroy (1st attempt)
+        working-directory: ./aws_infrastructure_construction_from_terraform/terraform
+        continue-on-error: true
         run: terraform destroy -auto-approve
 
-      # Plan で何が作成されるかを確認（デバッグ・安全のため）
+      - name: Terraform Destroy (2nd attempt - cleanup remaining)
+        working-directory: ./aws_infrastructure_construction_from_terraform/terraform
+        continue-on-error: true
+        run: terraform destroy -auto-approve
+
+      - name: Terraform State List (for debugging)
+        working-directory: ./aws_infrastructure_construction_from_terraform/terraform
+        continue-on-error: true
+        run: terraform state list
+
+      # --- 再構築フェーズ ---
       - name: Terraform Plan
         working-directory: ./aws_infrastructure_construction_from_terraform/terraform
         run: terraform plan
 
-      # インフラを再構築
       - name: Terraform Apply
         working-directory: ./aws_infrastructure_construction_from_terraform/terraform
         run: terraform apply -auto-approve
