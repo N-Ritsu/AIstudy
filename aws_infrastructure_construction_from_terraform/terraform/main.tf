@@ -15,6 +15,7 @@ provider "aws" {
 # 1. Dockerイメージを保存するためのECRリポジトリを作成
 resource "aws_ecr_repository" "app_ecr_repo" {
   name = "fastapi-app-repo" # リポジトリ名
+  force_delete = true
 }
 
 # 2. EC2インスタンスがECRからイメージをプルするためのIAMロールを作成
