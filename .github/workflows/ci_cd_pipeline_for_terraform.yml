@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'aws_infrastructure_construction_from_terraform/terraform/**'
+      - 'aws_infrastructure_construction_from_terraform/app/**'
 
 jobs:
   build-and-push-image:
