@@ -10,6 +10,9 @@
 ### ・arima_sarima_comparison
 ARIMAモデルとSARIMAモデルでローリング予測を行い、性能を比較するプロジェクトです。
 
+### ・aws_infrastructure_construction_from_terraform
+FastAPIアプリケーションをコンテナ化し、そのインフラ構築からデプロイまでをTerraformとGitHub Actionsを用いて自動化するプロジェクトです。
+
 ### ・bentoml_sklearn_serving
 Scikit-learnで学習させた機械学習モデル（アヤメ分類器）を、BentoMLを用いて高性能なAPIサーバーとして提供し、Docker Hubを通じて配布可能にするプロジェクトです。
 
