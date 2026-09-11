@@ -1,17 +1,27 @@
 # AIstudy
-### AIエンジニアにむけての学習用リポジトリ
+### AIに強いエンジニアにむけての学習用リポジトリ
 
 具体的なプログラムの詳細についてはそれぞれのREADMEをご覧ください。  
 また、各プログラムのライブラリ・モデル・アルゴリズムの採用理由はそれぞれのdesign_notes.txtをご覧ください。  
 学習用のため、復習しやすいように敢えてコメント文を冗長に記述しております。ご了承ください。
 
-以下、プログラム一覧です。
+## ピックアッププログラム
+生成AI、データ活用、クラウド/インフラ領域に関するプログラム３つです。  
+まずはこちらをご覧ください。
 
-### ・arima_sarima_comparison
-ARIMAモデルとSARIMAモデルでローリング予測を行い、性能を比較するプロジェクトです。
+### ・rag_chatbot
+LLMに外部のテキストファイルから知識を参照させ、その情報に基づいてユーザーの質問に回答するRAGシステムです。
 
 ### ・aws_infrastructure_construction_from_terraform
 FastAPIアプリケーションをコンテナ化し、そのインフラ構築からデプロイまでをTerraformとGitHub Actionsを用いて自動化するプロジェクトです。
+
+### ・ml_pipeline_project
+Apache Airflowを使用し、機械学習モデルの学習・評価・デプロイといった一連のプロセスを自動化するMLパイプラインを構築するプロジェクトです。
+
+## その他プログラム一覧
+
+### ・arima_sarima_comparison
+ARIMAモデルとSARIMAモデルでローリング予測を行い、性能を比較するプロジェクトです。
 
 ### ・bentoml_sklearn_serving
 Scikit-learnで学習させた機械学習モデル（アヤメ分類器）を、BentoMLを用いて高性能なAPIサーバーとして提供し、Docker Hubを通じて配布可能にするプロジェクトです。
@@ -71,9 +81,6 @@ scikit-learnのPipelineとColumnTransformerを用いて、機械学習の前処�
 ### ・matrix_factorization_comparison
 代表的な行列因子分解であるNaive SVD・NMF・SVD++・FunkSVDという4つの手法を、異なる特性を持つデータセットで比較・評価し、その予測精度と解釈性を分析するプロジェクトです。
 
-### ・ml_pipeline_project
-Apache Airflowを使用し、機械学習モデルの学習・評価・デプロイといった一連のプロセスを自動化するMLパイプラインを構築するプロジェクトです。
-
 ### ・movielens_recommender_by_cosine_similarity
 MovieLens 100Kデータセットを利用し、ユーザーベース協調フィルタリングとコサイン類似度を用いて、個々のユーザーにおすすめの映画を推薦するプログラムです。
 
@@ -85,9 +92,6 @@ MovieLens 100Kデータセットを利用し、ユーザーベース協調フィ
 
 ### ・q_learning_frozenlake
 Q学習アルゴリズムを用いて、gymnasiumライブラリのFrozenLake環境でエージェントを学習させ、効率的な経路探索能力を獲得させるプログラムです。
-
-### ・rag_chatbot
-LLMに外部のテキストファイルから知識を参照させ、その情報に基づいてユーザーの質問に回答するRAGシステムです。
 
 ### ・regression_model_comparison
 8つの主要な回帰モデル（線形回帰、Ridge、Lasso、決定木、SVR、ランダムフォレスト、勾配ブースティング、LightGBM）の性能と挙動を、特性の異なる4つのデータセットを用いて網羅的に比較・可視化するプロジェクトです。

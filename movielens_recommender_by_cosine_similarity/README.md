@@ -1,7 +1,8 @@
 # Movielens Recommender by Cosine Similarity
 
 ## 概要
-MovieLens 100Kデータセットを利用し、ユーザーベース協調フィルタリングとコサイン類似度を用いて、個々のユーザーにおすすめの映画を推薦するプロジェクトです。AIエンジニアを目指すにあたり、推薦システムの基本的なアルゴリズムの実装やモデル評価の経験を積むために、このプロジェクトを開発しました。
+MovieLens 100Kデータセットを利用し、ユーザーベース協調フィルタリングとコサイン類似度を用いて、個々のユーザーにおすすめの映画を推薦するプロジェクトです。  
+AIに強いエンジニアを目指すにあたり、推薦システムの基本的なアルゴリズムの実装やモデル評価の経験を積むために、このプロジェクトを開発しました。
 
 ## 実行結果
 ![movielens_recommender_by_cosine_similarity実行結果（前半）](./movielens_recommender_by_cosine_similarity_1.png)  ![movielens_recommender_by_cosine_similarity実行結果（後半）](./movielens_recommender_by_cosine_similarity_2.png)

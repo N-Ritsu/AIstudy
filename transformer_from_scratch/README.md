@@ -2,7 +2,7 @@
 
 ## 概要
 論文"Attention Is All You Need"で提案されたTransformerのコアアーキテクチャを、PyTorchを用いてゼロから実装するプロジェクトです。　　
-AIに強いアプリケーションエンジニアを目指すにあたり、現代のLLMや生成AIの基盤となっているTransformerの内部動作、特にSelf-Attention機構をコードレベルで深く理解するために開発しました。
+AIに強いエンジニアを目指すにあたり、現代のLLMや生成AIの基盤となっているTransformerの内部動作、特にSelf-Attention機構をコードレベルで深く理解するために開発しました。
 
 ## 実行結果
 ![実行結果](./result.png)

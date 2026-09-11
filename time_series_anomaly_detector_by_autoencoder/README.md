@@ -2,7 +2,7 @@
 
 ## 概要  
 PyTorchで構築したLSTM Autoencoderモデルを用いて、時系列データの中から異常を検出するプログラムです。
-AIエンジニアを目指すにあたり、教師なし学習による時系列データでの異常検知システムの開発経験を積むために、このプロジェクトを開発しました。
+AIに強いエンジニアを目指すにあたり、教師なし学習による時系列データでの異常検知システムの開発経験を積むために、このプロジェクトを開発しました。
 
 ## 実行結果  
 ![time_series_anomaly_detector_by_autoencoder.py実行結果](./time_series_anomaly_detector_by_autoencoder.png)  
