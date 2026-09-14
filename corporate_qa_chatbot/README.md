@@ -7,6 +7,12 @@ Retrieval-Augmented Generation技術を使用して、指定されたPDFドキ�
 ## 実行結果
 ![corporate_qa_chatbot実行結果](./corporate_qa_chatbot.png)
 
+## データフロー
+![データフロー](./dataflow.png)
+
+## ER図
+![ER図](./er_figure.png)
+
 ## 主な機能
 - PDFからの情報抽出: 指定されたdocumentsフォルダ内のPDFファイルからテキストを自動的に抽出
 - セマンティック検索 (RAG): ユーザーの質問に対して、内容的に関連性の高いPDFのテキストチャンクを高速に検索
