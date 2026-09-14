@@ -11,6 +11,9 @@ APIサーバーを起動し、ブラウザでアクセスした結果
 workflow実行結果
 ![workflow結果](./success.png)
 
+# ER図
+![ER図](./er_figure.png)
+
 ## 主な機能
 FastAPIによるAPIサーバー
   - Pydanticを用いた厳格なデータバリデーションを持つ、ユーザー情報の作成・読み取りAPIを実装。
