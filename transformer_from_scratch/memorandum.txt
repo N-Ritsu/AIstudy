@@ -1,0 +1,23 @@
+・開発目的
+現代のLLM／生成AIの基盤であるTransformerを、コードレベルで理解するため。
+
+・技術選定理由
+- Transformer（Encoder-Decoder + Self-Attention）：系列全体の関係を一度に扱え、長期依存と並列計算に強い。
+- PositionalEncoding（sin/cos）：順序情報を埋め込みに注入。
+- Padding Mask / Subsequent Mask：パディング除外と、デコーダの未来情報のカンニング防止。
+- 数列ソート：アルゴリズム的なSeq2Seqで、Attentionの効きを直感的に確認しやすいタスク。
+- 小規模（Tiny）モデルでCPUでも学習可能なパイプライン。
+
+・苦戦した点
+- Subsequent Maskなど、最初は直感的に分かりにくい部分の理解。
+- 学習時（教師強制）と推論時（自己回帰生成）でデータフローが異なる点の実装。
+- マスク・埋め込み・位置符号化を正しい形状でつなぐこと。
+
+・苦戦点の解決法、工夫点
+- TokenEmbedding・PositionalEncoding・マスク生成を部品として実装し、nn.Transformerを中核に前後処理を自作して全体の流れを把握。
+- 学習では教師強制、推論ではSOSから1トークンずつ生成するgreedy decodingを分離。
+- 動的に生成するカスタムDatasetで、未ソート数列→ソート済み系列のペアを供給。
+
+・得られた学び
+- Transformerの具体的な内容と理解
+- Subsequent Maskの意味（未来を隠して自己回帰を成立させる）
