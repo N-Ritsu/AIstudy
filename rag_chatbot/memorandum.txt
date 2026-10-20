@@ -66,6 +66,14 @@ Gemmaのpipelineは、入力したプロンプト全体を含めた生成結果�
 	- 正確性・指示追従性: 回答が正解と一致しているか、知識にない質問に対して、正しく「分かりません」と返せているか
 
 
+・プログラムの流れ
+１．load_knowledge(KNOWLEDGE_PASS)：LLMの知識となるテキストファイルを読み込む
+２．make_vector_database(knowledge_texts, VECTORIZER)：テキストのリストを受け取り、ベクトルに変換する
+３．for question in QUESTIONS:：各質問に対し処理を実行(デフォルトでは、"日本の首都はどこですか？","日本にはいくつの都道府県がありますか？","今日の天気はなんですか？"の３つ)
+  １．search_for_knowledge(question, knowledge_texts, VECTORIZER, index, NUMBER_OF_KNOWLEDGE)：受け取った質問に最も関連性の高い知識を、ベクトル検索によって特定する
+  ２．generate_answer_by_llm(prompt)：プロンプトを元に、LLMで回答を生成する
+
+
 ・苦戦した点
 - WSL + venvで始めたところ、Cythonビルドエラー、MKLライブラリの欠落、Pythonバージョン不整合、VSCode拡張の非互換など、コードの修正のみでは対応できないOSレベルの問題	（ビルドツール不足・仮想環境作成中に誤って中断したことによる不完全な環境の残留）が連鎖的に発生した。
 - 開発当初選んだMistral-7BがGPUなしではVRAM不足でスワッピングが発生し、極端に遅かった。
