@@ -8,6 +8,11 @@
 - PolynomialFeatures：交互作用（相乗効果）をモデル化。
 - KFold交差検証：分割の偶然を抑え、汎化性能を信頼できる形で評価。
 
+・主な設定値
+- データ：California Housing。学習用80%・テスト用20%（random_state=42）に分割し、学習用データに対して5分割の交差検証（KFold）。
+- 特徴量：K-Means（クラスタ数6）で緯度・経度から地域クラスタを作成。PolynomialFeatures（degree=2、interaction_only=True）で交互作用特徴を追加。
+- モデル：XGBoost（n_estimators=100、objective='reg:squarederror'）。評価はMSEを各Foldで算出し、平均と標準偏差で確認。
+
 ・苦戦した点
 - 一見緯度・経度が価格に関係するように見えても、実は高価格地域の集中の副次効果ではないか、という解釈の整理。
 - 特徴量エンジニアリングを交差検証内で正しく学習し、データリークを防ぐこと。
