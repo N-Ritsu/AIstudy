@@ -21,7 +21,8 @@ def evaluate_model() -> None:
     y_test = test_df[settings.TARGET_COLUMN]
     
     y_pred = model.predict(X_test) # 教師ありモデルなので予測値の変換は不要
-    
+
+    # classification_report: Precision（適合率）, Recall（再現率）, F1-score, Supportの４指標が出力される
     report = classification_report(y_test, y_pred, output_dict=True)
     
     print("分類レポート:")
